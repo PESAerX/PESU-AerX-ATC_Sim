@@ -14,16 +14,15 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\ASUS\Desktop\AerX\ReplySystemSS\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\ASUS\C%24\Users\ASUS\Desktop\AerX\ReplySystemSS\</InstallUrl>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
