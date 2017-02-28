@@ -7,41 +7,9 @@ namespace StatesAndGrammars
 
     public class Grammars
     {
-        static SpeechRecognitionEngine Pushback(SpeechRecognitionEngine sre, State state)
-        {
 
-            //request for pushback
-
-
-            Choices request = new Choices(new string[] { "request", "requesting", "ready" });
-            GrammarBuilder gb_request = new GrammarBuilder();
-            gb_request.Append(state.GetAtcName(), 0, 1);
-            gb_request.Append(state.GetCallSign());
-            gb_request.Append(request);
-            gb_request.Append(state.stateName);
-
-            Grammar g_request = new Grammar(gb_request);
-            sre.LoadGrammarAsync(g_request);
-
-            //pushback readback
-            Choices answer = new Choices();
-            foreach (String[] i  in state.readbackInfo)
-            {
-                answer.Add(i);
-            } 
-            GrammarBuilder gb_readback = new GrammarBuilder();
-            gb_readback.Append(answer);
-            gb_readback.Append(state.GetCallSign());
-            //gb_readback.Append(atc, 0, 1);
-
-            Grammar g_readback = new Grammar(gb_readback);
-            sre.LoadGrammar(g_readback);
-
-            return sre;
-
-        }//set_grammars
        
-        static SpeechRecognitionEngine Taxi(SpeechRecognitionEngine sre, State state)
+         public static SpeechRecognitionEngine GetGrammars(SpeechRecognitionEngine sre, State state)
         {
 
             sre.UnloadAllGrammars();
@@ -78,23 +46,9 @@ namespace StatesAndGrammars
 
         }
         
-        public static SpeechRecognitionEngine getGrammars(SpeechRecognitionEngine sre, State state)
-        {
-            if (state.stateName == "pushback")
-            {
-                return Pushback(sre, state);
-            }
-            else if (state.stateName == "taxi")
-            {
-                return Taxi(sre, state); 
-            }
-            else
-            {
-                return Pushback(sre, state); //Change when adding new states!!
-            }
-
-        }
+        
     }
+    [Serializable]
     public class State
     {
         //for a state which begins with ATC contact, speak first command from constructor, validate readback is first stateReply
