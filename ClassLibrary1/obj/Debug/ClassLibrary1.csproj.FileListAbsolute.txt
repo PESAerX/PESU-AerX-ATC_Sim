@@ -1,0 +1,5 @@
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
