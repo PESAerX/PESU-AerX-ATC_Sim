@@ -11,11 +11,12 @@ namespace StatesAndGrammars
        
          public static SpeechRecognitionEngine GetGrammars(SpeechRecognitionEngine sre, State state)
         {
+          
 
             sre.UnloadAllGrammars();
-            //request for taxi
+            //request for pushback/taxi
 
-
+            
             Choices request = new Choices(new string[] { "request", "requesting", "ready" });
             GrammarBuilder gb_request = new GrammarBuilder();
             gb_request.Append(state.GetAtcName(), 0, 1);
@@ -26,7 +27,7 @@ namespace StatesAndGrammars
             Grammar g_request = new Grammar(gb_request);
             sre.LoadGrammarAsync(g_request);
 
-            //taxi readbacks
+            //state readbacks
             Choices answer = new Choices();
             foreach (String[] i in state.readbackInfo)
             {
@@ -143,6 +144,14 @@ namespace StatesAndGrammars
             this.callSign = callSign;
             this.atcName = atcName;
 
+        }
+        public State()
+        {
+            this.stateName = "";
+            this.stateReplies = new String[] { };
+            this.readbackInfo = new String[][] { };
+            this.callSign = "";
+            this.atcName = "";
         }
 
 

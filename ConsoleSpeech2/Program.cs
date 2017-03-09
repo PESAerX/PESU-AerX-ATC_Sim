@@ -14,9 +14,9 @@ namespace ConsoleSpeech2
             // ss,sre and state object made available everywhere
             static SpeechSynthesizer ss = new SpeechSynthesizer();
             static SpeechRecognitionEngine sre;
-            static State pushback;
-            static State taxi;
-            static State takeoff;
+            static State pushback =new State();
+            static State taxi= new State();
+            static State takeoff = new State();
             static LinkedList<State> States = new LinkedList<State>();
         static void Main(string[] args)
             {
@@ -36,8 +36,9 @@ namespace ConsoleSpeech2
                     sre = new SpeechRecognitionEngine(ci);
                     sre.SetInputToDefaultAudioDevice();
                     sre.SpeechRecognized += sre_SpeechRecognized;
-                    Console.WriteLine("\nReady");
-                    ss.Speak("Ready");
+                    ss.Speak("Ready"); 
+                    Console.WriteLine("Saying: <Ready>");
+                 
                 
                 while(States.First != null)
                 {
@@ -49,7 +50,7 @@ namespace ConsoleSpeech2
                     sre.RecognizeAsyncStop();
                     Console.WriteLine(state.stateName + " Completed!");
                     States.RemoveFirst();
-
+                    //Console.WriteLine("States remaining: "+States.Count);
 
                 }
 
@@ -83,14 +84,14 @@ namespace ConsoleSpeech2
             //pushback
             String[] stateReplies = new String[] { "Pushback approved, facing south", "validate readback", "" };
             String[][] readbackInfo = { new String[] { "roger", "push back approved facing south", "facing south push back approved" } };
-            String callSign = "delta alpha tango one seven seven three";
+            String callSign = "delta alpha tango one seven two";
             String atcName = "apron";
             String stateName = "push back";
             pushback = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             //taxi
             stateReplies = new String[] { "Taxi to holding point papa three, runway two five romeo cross runway two, Q N H one zero two four",
                         "validate readback", "Give way to indigo air bus three zero zero on inner nine","validate readback",
-                        "standby for one two zero decimal seven seven five bangalore tower","validate readback","Bangalore Tower report when ready for departure"};
+                        "standby for one two zero decimal seven seven five bangalore tower","validate readback"," This is Bangalore Tower, report when ready for departure."};
 
             readbackInfo = new String[][]{ new String[]{"taxi to holding point papa three run way two five romeo cross run way two",
                                          "taxi to holding point papa three run way two five romeo cross run way two, Q N H one zero two four","roger"},
@@ -102,11 +103,13 @@ namespace ConsoleSpeech2
 
             taxi = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             //takeoff
-            stateReplies = new String[] {"Line up and wait runway two five romeo.","Wind two nine zero degrees, eight knots, runway two five romeo cleared for takeoff, when airborne contact bangalore departure one two six decimal six two five."};
+            stateReplies = new String[] {"validate readback","Line up and wait runway two five romeo.","validate readback","Wind two nine zero degrees, eight knots, runway two five romeo cleared for takeoff, when airborne contact bangalore departure one two six decimal six two five.",
+                "validate readback",""};
 
-            readbackInfo = new String[][] {new String[]{"line up and wait runway two five romeo"},new String[]{"runway two five romeo cleared for takeoff when airborne contact bangalore departure one two six decimal six two five",
-            "runway two five romeo cleared for takeoff when airborne contact bangalore departure"}};
-            
+            readbackInfo = new String[][] {new String[]{"ready","ready for departure","ready to take off","ready for takeoff"},new String[]{"line up and wait runway two five romeo"},new String[]{"runway two five romeo cleared for takeoff when airborne contact bangalore departure one two six decimal six two five",
+            "runway two five romeo cleared for takeoff when airborne contact bangalore departure","roger","runway two five romeo cleared for takeoff"}};
+            stateName = "take off";
+            takeoff = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             //making the list
             States.AddFirst(pushback);
             States.AddLast(taxi);
@@ -128,7 +131,8 @@ namespace ConsoleSpeech2
             {
                 var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                List<State> salesman = (List<State>)bformatter.Deserialize(stream);
+                States = (LinkedList<State>)bformatter.Deserialize(stream);
+                //Console.WriteLine(sizeof(States.First.Value));
             }
 
         }// LoadStates

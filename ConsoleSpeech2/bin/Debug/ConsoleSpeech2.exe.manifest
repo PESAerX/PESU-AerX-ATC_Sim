@@ -47,26 +47,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassLibrary1.dll" size="6144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassLibrary1.dll" size="6656">
       <assemblyIdentity name="ClassLibrary1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zNDmt8xwT8iDXBBePvA1lpJY+dmWwJc6lwNSEPLiTDY=</dsig:DigestValue>
+        <dsig:DigestValue>C3rqOBx5yuznS91L+T5ZT9f1+OOprqpf0LJCkxnG214=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleSpeech2.exe" size="10152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleSpeech2.exe" size="11688">
       <assemblyIdentity name="ConsoleSpeech2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>b3aQBdz1YGZNnK0HOUQbAbXI8CrxOgdUkAkEcHqbGI8=</dsig:DigestValue>
+        <dsig:DigestValue>bgTzYeQiJtyjOmde2WM9spRPCsmR6/zLFUrpRo7j8Hk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
