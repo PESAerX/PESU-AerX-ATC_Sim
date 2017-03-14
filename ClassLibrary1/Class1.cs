@@ -4,29 +4,16 @@ using System.Speech.Synthesis;
 using System.Globalization;
 namespace StatesAndGrammars
 {
-
+    
     public class Grammars
     {
 
-       
          public static SpeechRecognitionEngine GetGrammars(SpeechRecognitionEngine sre, State state)
         {
           
 
             sre.UnloadAllGrammars();
-            //request for pushback/taxi
-
             
-            Choices request = new Choices(new string[] { "request", "requesting", "ready" });
-            GrammarBuilder gb_request = new GrammarBuilder();
-            gb_request.Append(state.GetAtcName(), 0, 1);
-            gb_request.Append(state.GetCallSign());
-            gb_request.Append(request);
-            gb_request.Append(state.stateName);
-
-            Grammar g_request = new Grammar(gb_request);
-            sre.LoadGrammarAsync(g_request);
-
             //state readbacks
             Choices answer = new Choices();
             foreach (String[] i in state.readbackInfo)
@@ -34,13 +21,19 @@ namespace StatesAndGrammars
                 answer.Add(i);
             }
             GrammarBuilder gb_readback = new GrammarBuilder();
+            GrammarBuilder gb_request = new GrammarBuilder();
             gb_readback.Append(answer);
             gb_readback.Append(state.GetCallSign());
             //gb_readback.Append(atc, 0, 1);
+            gb_request.Append(state.GetAtcName(), 0, 1);
+            gb_request.Append("this is", 0, 1);
+            gb_request.Append(state.GetCallSign());
+            gb_request.Append(answer);
 
+            Grammar g_request = new Grammar(gb_request);    
             Grammar g_readback = new Grammar(gb_readback);
             sre.LoadGrammar(g_readback);
-
+            sre.LoadGrammar(g_request);    
             return sre;
 
 
@@ -90,7 +83,7 @@ namespace StatesAndGrammars
                     bool validated = false;
                     foreach (String value in readback)
                     {
-                        ///Console.Write(value);
+                        //Console.Write(value);
                         if (pilotTxt.Contains(value))
                         {
 

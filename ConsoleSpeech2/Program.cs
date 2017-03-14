@@ -15,7 +15,7 @@ namespace ConsoleSpeech2
             static SpeechSynthesizer ss = new SpeechSynthesizer();
             static SpeechRecognitionEngine sre;
             static State pushback =new State();
-            static State taxi= new State();
+            static State taxi = new State();
             static State takeoff = new State();
             static LinkedList<State> States = new LinkedList<State>();
         static void Main(string[] args)
@@ -82,18 +82,18 @@ namespace ConsoleSpeech2
         static void MakeStates(string serializationFile)
         {
             //pushback
-            String[] stateReplies = new String[] { "Pushback approved, facing south", "validate readback", "" };
-            String[][] readbackInfo = { new String[] { "roger", "push back approved facing south", "facing south push back approved" } };
+            String[] stateReplies = new String[] {"validate readback" ,"Pushback approved, facing south", "validate readback", "" };
+            String[][] readbackInfo = {new String[]{"requesting pushback","ready for pushback","ready to pushback"}, new String[] { "roger", "push back approved facing south", "facing south push back approved" } };
             String callSign = "delta alpha tango one seven two";
             String atcName = "apron";
             String stateName = "push back";
             pushback = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             //taxi
-            stateReplies = new String[] { "Taxi to holding point papa three, runway two five romeo cross runway two, Q N H one zero two four",
+            stateReplies = new String[] {"validate readback", "Taxi to holding point papa three, runway two five romeo cross runway two, Q N H one zero two four",
                         "validate readback", "Give way to indigo air bus three zero zero on inner nine","validate readback",
                         "standby for one two zero decimal seven seven five bangalore tower","validate readback"," This is Bangalore Tower, report when ready for departure."};
 
-            readbackInfo = new String[][]{ new String[]{"taxi to holding point papa three run way two five romeo cross run way two",
+            readbackInfo = new String[][]{new String[]{"requesting taxi","ready for taxi","ready to taxi"}, new String[]{"taxi to holding point papa three run way two five romeo cross run way two",
                                          "taxi to holding point papa three run way two five romeo cross run way two, Q N H one zero two four","roger"},
                                          new String[]{"give way to indigo air bus three zero zero on inner nine","giving way to indigo air bus three zero zero on inner nine",
                                          "giving way to indigo air bus three zero zero","roger"},
