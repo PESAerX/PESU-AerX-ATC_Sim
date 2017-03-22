@@ -33,7 +33,15 @@ namespace StatesAndGrammars
             Grammar g_request = new Grammar(gb_request);    
             Grammar g_readback = new Grammar(gb_readback);
             sre.LoadGrammar(g_readback);
-            sre.LoadGrammar(g_request);    
+            sre.LoadGrammar(g_request);
+            
+            //appending dictation grammar, will pick up all that is said
+            //only for debugging, comment out otherwise
+            GrammarBuilder gb_dictation = new GrammarBuilder();
+            gb_dictation.AppendDictation();
+            Grammar g_dictation = new Grammar(gb_dictation);
+            sre.LoadGrammar(g_dictation);
+            
             return sre;
 
 
