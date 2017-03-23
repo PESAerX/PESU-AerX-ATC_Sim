@@ -54,19 +54,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+PvRFRhcfvwb08x0DeJD1ydxhRWA+gIg6vrU0KKgAD0=</dsig:DigestValue>
+        <dsig:DigestValue>F9BqWgMhDbcKsna25LrCZZmBHulk1LFBv8TeXF/WFCw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleSpeech2.exe" size="11688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleSpeech2.exe" size="14760">
       <assemblyIdentity name="ConsoleSpeech2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ot6BnAN177V9Dig2x6N+exk87mvOGIQzWWJ8agPNX20=</dsig:DigestValue>
+        <dsig:DigestValue>i7GdziG4GKfRVg50kbxvD4yyMETfXtAtTq3wMQJEqV4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

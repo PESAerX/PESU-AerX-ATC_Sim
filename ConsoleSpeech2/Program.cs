@@ -19,15 +19,15 @@ namespace ConsoleSpeech2
             {
                     string dir = Directory.GetCurrentDirectory();
                     string serializationFile = Path.Combine(dir, "states.bin");
-                    if (!File.Exists(serializationFile))
-                    {
+                    //if (!File.Exists(serializationFile))
+                   // {
                         MakeStates(serializationFile);
                        
-                    }
-                    else
-                    {
-                        LoadStates(serializationFile);
-                    }
+                    //}
+                    //else
+                    //{
+                    //    LoadStates(serializationFile);
+                    //}
                     ss.SetOutputToDefaultAudioDevice();
                     CultureInfo ci = new CultureInfo("en-us");
                     sre = new SpeechRecognitionEngine(ci);
@@ -42,12 +42,13 @@ namespace ConsoleSpeech2
                     State state = States.First.Value;
                     sre = Grammars.GetGrammars(sre, state);
                     sre.RecognizeAsync(RecognizeMode.Multiple);
+                    Console.WriteLine("Current State: " + States.First.Value.stateName);
                     while (state.IsCompleted() == false) { ; }
-
                     sre.RecognizeAsyncStop();
+                    
                     Console.WriteLine(state.stateName + " Completed!");
                     States.RemoveFirst();
-                    //Console.WriteLine("States remaining: "+States.Count);
+                    
 
                 }
 
@@ -78,14 +79,16 @@ namespace ConsoleSpeech2
 
         static void MakeStates(string serializationFile)
         {
-            //delivery
-            String[] stateReplies = new String[] {"validate readback",@"start up approved. Cleared to lima echo delta via civ nine charlie departure. Climb to fox trot lima six zero. Squawk seven one three two.
-             Monitor atis information x-ray","validate readback","when ready contact bangalore ground, one two one decimal eight seven five","validate readback"};
-            String[][] readbackInfo = { new String[] {"roger", "stand two zero seven request start up information whiskey", "stand two zero seven requesting start up information whiskey", "stand two zero seven ready for start up information whiskey",
-            "stand two zero seven ready to start up information whiskey"},new String[]{"start up approved cleared to lima echo delta via civ nine charlie departure climb to fox trot lima six zero squawk seven one three two information x ray"},
-             new String[]{"when ready contact bangalore ground","when ready contact bangalore ground one two one decimal eight seven five","contact bangalore ground when ready one two one decimal eight seven five","contact bangalore ground when ready","roger"}};
             //setting call sign here, will remain unchanged throughout
             String callSign = "delta alpha tango one seven two";
+            
+            //delivery
+            String[] stateReplies = new String[] {"validate readback","start up approved. Cleared to lima echo delta via civ nine charlie departure. Climb to fox trot lima six zero. Squawk seven one three two. Monitor atis information x-ray",
+                "validate readback","when ready contact bangalore ground, one two one decimal eight seven five","validate readback",""};
+            String[][] readbackInfo = { new String[] { "stand two zero seven request start up information whiskey", "stand two zero seven requesting start up information whiskey", "stand two zero seven ready for start up information whiskey",
+            "stand two zero seven ready to start up information whiskey"},new String[]{"start up approved cleared to lima echo delta via civ nine charlie departure climb to fox trot lima six zero squawk seven one three two information x ray","roger"},
+             new String[]{"when ready contact bangalore ground","when ready contact bangalore ground one two one decimal eight seven five","contact bangalore ground when ready one two one decimal eight seven five","contact bangalore ground when ready","roger"}};
+            
             String atcName = "delivery";
             String stateName = "delivery";
             State delivery = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
@@ -94,7 +97,7 @@ namespace ConsoleSpeech2
             stateReplies = new String[] {"validate readback" ,"Pushback approved, facing south", "validate readback", "" };
             readbackInfo = new String[][]{new String[]{"requesting pushback","ready for pushback","ready to pushback"}, new String[] { "roger", "push back approved facing south", "facing south push back approved" } };
             
-            atcName = "apron";
+            atcName = "ground";
             stateName = "push back";
             State pushback = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             //taxi
@@ -115,34 +118,33 @@ namespace ConsoleSpeech2
             stateReplies = new String[] {"validate readback","Line up and wait runway two five romeo.","validate readback","wind two nine zero degrees, eight knots, runway two five romeo cleared for takeoff, when airborne contact bangalore departure one two six decimal six two five.",
                 "validate readback",""};
 
-            readbackInfo = new String[][] {new String[]{"ready","ready for departure","ready to take off","ready for takeoff"},new String[]{"line up and wait runway two five romeo"},new String[]{"runway two five romeo cleared for takeoff when airborne contact bangalore departure one two six decimal six two five",
+            readbackInfo = new String[][] {new String[]{"ready","ready for departure","ready to take off","ready for takeoff"},new String[]{"line up and wait runway two five romeo","roger"},new String[]{"run way two five romeo cleared for takeoff when airborne contact bangalore departure one two six decimal six two five",
             "runway two five romeo cleared for takeoff when airborne contact bangalore departure","roger","runway two five romeo cleared for takeoff"}};
             stateName = "take off";
             State takeoff = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             
             //landing
-            stateReplies = new String[] {"validate readback","wind two four zero degrees eight knots. Cleared to land run way two five lima","validate readback","take convenient left and contact ground one one eight decimal zero five zero" };
-            readbackInfo = new String[][] {new String[]{"established I L S run way two five lima"}, new String[]{"roger","cleared to land runway two five lima"},
+            stateReplies = new String[] {"validate readback","wind two four zero degrees eight knots. Cleared to land run way two five lima","validate readback","take convenient left and contact ground one one eight decimal zero five zero","validate readback","" };
+            readbackInfo = new String[][] {new String[]{"established i l s run way two five lima"}, new String[]{"roger","cleared to land runway two five lima"},
             new String[]{"take convenient left and contact ground","roger","take convenient left and contact ground one one eight decimal zero five zero"}};
-            State landing = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
-         
-            
             stateName = "landing";
             atcName = "tower";
 
+            State landing = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
+            
             //ground
-            stateReplies = new String[] { "validate readback" ,"taxi to terminal bravo stand two zero five via inner nine","validate readback"};
+            stateReplies = new String[] { "validate readback" ,"taxi to terminal bravo stand two zero five via inner nine","validate readback",""};
             readbackInfo = new String[][] { new String[] { "run way two five lima vacated" }, new String[]{"roger", "taxi to terminal bravo stand two zero five via inner nine",
                                             "taxi to terminal bravo stand two zero five"},new String[]{}};
             atcName = "ground";
             stateName = "ground";
             State ground = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             //making the list
-            States.AddFirst(delivery);
-            States.AddLast(pushback);
-            States.AddLast(taxi);
-            States.AddLast(takeoff);
-            States.AddLast(landing);
+            //States.AddFirst(delivery);
+            //States.AddLast(pushback);
+            //States.AddLast(taxi);
+            //States.AddLast(takeoff);
+            //States.AddLast(landing);
             States.AddLast(ground);
             //serialize
             using (Stream stream = File.Open(serializationFile, FileMode.Create))
