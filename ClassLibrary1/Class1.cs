@@ -37,10 +37,10 @@ namespace StatesAndGrammars
             
             //appending dictation grammar, will pick up all that is said
             //only for debugging, comment out otherwise
-            GrammarBuilder gb_dictation = new GrammarBuilder();
-            gb_dictation.AppendDictation();
-            Grammar g_dictation = new Grammar(gb_dictation);
-            sre.LoadGrammar(g_dictation);
+            //GrammarBuilder gb_dictation = new GrammarBuilder();
+            //gb_dictation.AppendDictation();
+            //Grammar g_dictation = new Grammar(gb_dictation);
+            //sre.LoadGrammar(g_dictation);
             
             return sre;
 

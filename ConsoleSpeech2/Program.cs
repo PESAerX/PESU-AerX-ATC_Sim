@@ -86,7 +86,7 @@ namespace ConsoleSpeech2
              new String[]{"when ready contact bangalore ground","when ready contact bangalore ground one two one decimal eight seven five","contact bangalore ground when ready one two one decimal eight seven five","contact bangalore ground when ready","roger"}};
             //setting call sign here, will remain unchanged throughout
             String callSign = "delta alpha tango one seven two";
-            String atcName = "bangalore delivery";
+            String atcName = "delivery";
             String stateName = "delivery";
             State delivery = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             
@@ -128,15 +128,22 @@ namespace ConsoleSpeech2
          
             
             stateName = "landing";
-            atcName = "bangalore tower";
+            atcName = "tower";
 
-            
+            //ground
+            stateReplies = new String[] { "validate readback" ,"taxi to terminal bravo stand two zero five via inner nine","validate readback"};
+            readbackInfo = new String[][] { new String[] { "run way two five lima vacated" }, new String[]{"roger", "taxi to terminal bravo stand two zero five via inner nine",
+                                            "taxi to terminal bravo stand two zero five"},new String[]{}};
+            atcName = "ground";
+            stateName = "ground";
+            State ground = new State(stateName, stateReplies, readbackInfo, callSign, atcName);
             //making the list
             States.AddFirst(delivery);
             States.AddLast(pushback);
             States.AddLast(taxi);
             States.AddLast(takeoff);
             States.AddLast(landing);
+            States.AddLast(ground);
             //serialize
             using (Stream stream = File.Open(serializationFile, FileMode.Create))
             {
