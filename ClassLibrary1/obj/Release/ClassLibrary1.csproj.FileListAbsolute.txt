@@ -1,0 +1,4 @@
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\obj\Release\ClassLibrary1.pdb
