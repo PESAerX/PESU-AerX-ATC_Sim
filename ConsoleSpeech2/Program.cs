@@ -20,7 +20,8 @@ namespace ConsoleSpeech2
             
 
         static void Main(string[] args)
-            {
+            {       Application.EnableVisualStyles();
+                    Application.Run(new Form1());//To run Form1 over the console.
                 
                     string dir = Directory.GetCurrentDirectory();
                     string serializationFile = Path.Combine(dir, "states.bin");
@@ -31,8 +32,7 @@ namespace ConsoleSpeech2
                     }
                     else
                     {
-                        MakeStates(serializationFile);
-                        //LoadStates(serializationFile);
+                        LoadStates(serializationFile);
                     }
                     ss.SetOutputToDefaultAudioDevice();
                     CultureInfo ci = new CultureInfo("en-US");
@@ -260,6 +260,6 @@ namespace ConsoleSpeech2
                 //Console.WriteLine(sizeof(States.First.Value));
             }
 
-        }//LoadStates
+        }// LoadStates
     }
 }
