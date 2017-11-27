@@ -13,22 +13,6 @@ namespace StatesAndGrammars
           
 
             sre.UnloadAllGrammars();
-            CultureInfo ci = new CultureInfo("en-US");
-
-            // emergency rules
-            GrammarBuilder gb_emergency = new GrammarBuilder();
-            gb_emergency.Culture = ci;
-            Choices emergencyPhrases = new Choices();
-            foreach(String Phrase in state.GetEmergencyCalls())
-            {
-                emergencyPhrases.Add(Phrase);
-            }
-            gb_emergency.Append(emergencyPhrases, 0, 3);
-            gb_emergency.Append(state.GetAtcName(),0,1);
-            gb_emergency.Append(state.GetCallSign());
-            // TO DO
-            // nature of emergency
-            // intentions
             
             //state readbacks
             Choices answer = new Choices();
@@ -37,10 +21,7 @@ namespace StatesAndGrammars
                 answer.Add(i);
             }
             GrammarBuilder gb_readback = new GrammarBuilder();
-            gb_readback.Culture = ci;
             GrammarBuilder gb_request = new GrammarBuilder();
-            gb_request.Culture = ci;
-            gb_readback.Append(state.GetCallSign(),0,1);
             gb_readback.Append(answer);
             gb_readback.Append(state.GetCallSign());
             //gb_readback.Append(atc, 0, 1);
@@ -51,8 +32,6 @@ namespace StatesAndGrammars
 
             Grammar g_request = new Grammar(gb_request);    
             Grammar g_readback = new Grammar(gb_readback);
-            Grammar g_emergency = new Grammar(gb_emergency);
-            sre.LoadGrammar(g_emergency);
             sre.LoadGrammar(g_readback);
             sre.LoadGrammar(g_request);
             
@@ -79,26 +58,11 @@ namespace StatesAndGrammars
         private bool completed = false;
         private int stateCount = 0;
         private int readbackCount = 0;
-        private String[] emergencyCalls = {"may day", "pan pan" };
         private String[] stateReplies;
-        private static Boolean isEmergency = false;
+       
         internal String[][] readbackInfo;
         private string callSign;
         private string atcName;
-        public String[] GetEmergencyCalls()
-        {
-            return emergencyCalls;
-        }
-        public static Boolean IsEmergency()
-        {
-            return isEmergency;
-        }
-        public static void setEmergency(Boolean val)
-        {
-            isEmergency = val;
-        }
-       
-
         public bool IsCompleted()
         {
             return completed;
@@ -124,22 +88,10 @@ namespace StatesAndGrammars
                     pilotTxt = pilotTxt.ToLower();
                     Console.WriteLine("validating..");
                     String[] readback = readbackInfo[readbackCount];
-                    foreach(String val in readback)
-                    {
-                        Console.WriteLine(val);
-                    }
                     bool validated = false;
                     foreach (String value in readback)
                     {
-                        // Console.Write(value);
-                        foreach( String Call in  emergencyCalls)
-                        {
-                            if (pilotTxt.Contains(Call))
-                            {
-                                isEmergency = true;
-                                return "";  
-                            }
-                        }
+                        //Console.Write(value);
                         if (pilotTxt.Contains(value))
                         {
 
