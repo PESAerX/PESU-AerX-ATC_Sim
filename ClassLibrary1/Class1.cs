@@ -37,10 +37,7 @@ namespace StatesAndGrammars
                 answer.Add(i);
             }
             GrammarBuilder gb_readback = new GrammarBuilder();
-            gb_readback.Culture = ci;
             GrammarBuilder gb_request = new GrammarBuilder();
-            gb_request.Culture = ci;
-            gb_readback.Append(state.GetCallSign(),0,1);
             gb_readback.Append(answer);
             gb_readback.Append(state.GetCallSign());
             //gb_readback.Append(atc, 0, 1);
