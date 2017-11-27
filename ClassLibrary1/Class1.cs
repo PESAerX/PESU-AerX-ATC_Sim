@@ -15,13 +15,17 @@ namespace StatesAndGrammars
             sre.UnloadAllGrammars();
             
             //state readbacks
+            CultureInfo ci = new CultureInfo("en-US");
             Choices answer = new Choices();
             foreach (String[] i in state.readbackInfo)
             {
                 answer.Add(i);
             }
             GrammarBuilder gb_readback = new GrammarBuilder();
+            gb_readback.Culture = ci;
             GrammarBuilder gb_request = new GrammarBuilder();
+            gb_request.Culture = ci;
+            gb_readback.Append(state.GetCallSign(),0,1);
             gb_readback.Append(answer);
             gb_readback.Append(state.GetCallSign());
             //gb_readback.Append(atc, 0, 1);
@@ -29,6 +33,7 @@ namespace StatesAndGrammars
             gb_request.Append("this is", 0, 1);
             gb_request.Append(state.GetCallSign());
             gb_request.Append(answer);
+            //Changed order here
 
             Grammar g_request = new Grammar(gb_request);    
             Grammar g_readback = new Grammar(gb_readback);
@@ -43,8 +48,6 @@ namespace StatesAndGrammars
             //sre.LoadGrammar(g_dictation);
             
             return sre;
-
-
 
         }
         
