@@ -42,26 +42,31 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassLibrary1.dll" size="6656">
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Speech" version="11.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassLibrary1.dll" size="6144">
       <assemblyIdentity name="ClassLibrary1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EvOc36u5OlsARYz7OkDL+kHepH5qYJ+Mv7Oa/AHcDag=</dsig:DigestValue>
+        <dsig:DigestValue>F9BqWgMhDbcKsna25LrCZZmBHulk1LFBv8TeXF/WFCw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleSpeech2.exe" size="14848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleSpeech2.exe" size="14760">
       <assemblyIdentity name="ConsoleSpeech2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>otJFxTU7PzqaqlA0+oi5NkgCAJTgXUJ9DRPUOCXTtjc=</dsig:DigestValue>
+        <dsig:DigestValue>i7GdziG4GKfRVg50kbxvD4yyMETfXtAtTq3wMQJEqV4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
