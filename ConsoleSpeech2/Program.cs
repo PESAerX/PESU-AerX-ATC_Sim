@@ -15,105 +15,48 @@ namespace ConsoleSpeech2
             static SpeechSynthesizer ss = new SpeechSynthesizer();
             static SpeechRecognitionEngine sre;
             static LinkedList<State> States = new LinkedList<State>();
-            static LinkedList<State> Temp = States;
-            static LinkedList<State> EmergencyStatesLL = new LinkedList<State>();
-            
-
         static void Main(string[] args)
             {
-                
                     string dir = Directory.GetCurrentDirectory();
                     string serializationFile = Path.Combine(dir, "states.bin");
-                    if (!File.Exists(serializationFile))
-                    {
+                    //if (!File.Exists(serializationFile))
+                   // {
                         MakeStates(serializationFile);
                        
-                    }
-                    else
-                    {
-                        MakeStates(serializationFile);
-                        //LoadStates(serializationFile);
-                    }
+                    //}
+                    //else
+                    //{
+                    //    LoadStates(serializationFile);
+                    //}
                     ss.SetOutputToDefaultAudioDevice();
-                    CultureInfo ci = new CultureInfo("en-US");
+                    CultureInfo ci = new CultureInfo("en-us");
                     sre = new SpeechRecognitionEngine(ci);
-                        
                     sre.SetInputToDefaultAudioDevice();
                     sre.SpeechRecognized += sre_SpeechRecognized;
-                    sre.SpeechHypothesized += sre_SpeechHypothesized;
-                    sre.SpeechRecognitionRejected += sre_SpeechRecognitionRejected;
-                  //  sre.EndSilenceTimeoutAmbiguous = TimeSpan.FromSeconds(2);
                     ss.Speak("Ready"); 
                     Console.WriteLine("Saying: <Ready>");
-           
+                 
                 
-                while(Temp.First != null) 
+                while(States.First != null)
                 {
-                    State state = Temp.First.Value;
+                    State state = States.First.Value;
                     sre = Grammars.GetGrammars(sre, state);
-                    //sre.EmulateRecognizeAsync();
                     sre.RecognizeAsync(RecognizeMode.Multiple);
-                   
-                    Console.WriteLine("Current State: " + Temp.First.Value.stateName);
-                    while (state.IsCompleted() == false)
-                    {
-                        if(State.IsEmergency())
-                        {
-                            Temp = EmergencyStatesLL;
-                            // TO DO go to emergency states list
-                            // something like temp = EmegergencyStatesLL.First
-                            break;
-                        }
-                    }
+                    Console.WriteLine("Current State: " + States.First.Value.stateName);
+                    while (state.IsCompleted() == false) { ; }
                     sre.RecognizeAsyncStop();
+                    
                     Console.WriteLine(state.stateName + " Completed!");
-                    if (State.IsEmergency())
-                    {
-                        State.setEmergency(false);
-                        //Console.Write(EmergencyStatesLL.First.Value.stateName);
-                        //Console.Write(Temp.First.Value.stateName);
-                    }
-                    else
-                    {
-                        Temp.RemoveFirst();
-                    }    
+                    States.RemoveFirst();
                     
 
                 }
 
                 Console.Read();
-                
 
 
 
             }
-
-        static void sre_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)
-        {
-            Console.WriteLine(e.Result.Confidence + " " + e.Result.Text);
-            if (e.Result.Confidence > 0)
-            {
-                string txt = e.Result.Text;
-                float confidence = e.Result.Confidence;
-                Console.WriteLine("\nRecognized: " + txt);
-                //   if (confidence < 0.40) return; // arbitrary constant
-                //begin handling
-
-                String reply = Temp.First.Value.GetReply(txt); // current state 
-
-                if (txt.Length > 0)
-                {
-                    Console.WriteLine("\n<Saying>" + reply);
-                    ss.Speak(reply);
-                }
-                
-            }
-        }
-
-        static void sre_SpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)
-        {
-            Console.WriteLine(e.Result.Text);
-        }
         
 
         static void sre_SpeechRecognized(object sender,
@@ -122,14 +65,13 @@ namespace ConsoleSpeech2
             string txt = e.Result.Text;
             float confidence = e.Result.Confidence;
             Console.WriteLine("\nRecognized: " + txt);
-         //   if (confidence < 0.40) return; // arbitrary constant
+            if (confidence < 0.40) return; // arbitrary constant
             //begin handling
 
-            String reply = Temp.First.Value.GetReply(txt); // current state 
+            String reply = States.First.Value.GetReply(txt); // current state 
             
             if (txt.Length > 0) {
                 Console.WriteLine("\n<Saying>" + reply);
-                
                 ss.Speak(reply);
             }
             
@@ -138,7 +80,7 @@ namespace ConsoleSpeech2
         static void MakeStates(string serializationFile)
         {
             //setting call sign here, will remain unchanged throughout
-            String callSign = "delta alpha tango one seven three";
+            String callSign = "delta alpha tango one seven two";
             
             //delivery
             String[] stateReplies = new String[] {"validate readback","start up approved. Cleared to lima echo delta via civ nine charlie departure. Climb to fox trot lima six zero. Squawk seven one three two. Monitor atis information x-ray",
@@ -201,11 +143,9 @@ namespace ConsoleSpeech2
             //States.AddFirst(delivery);
             //States.AddLast(pushback);
             //States.AddLast(taxi);
-            States.AddLast(takeoff);
+            //States.AddLast(takeoff);
             //States.AddLast(landing);
-            //States.AddLast(ground);
-            EmergencyStatesLL.AddFirst(landing);
-            //EmergencyStatesLL.AddLast(landing);
+            States.AddLast(ground);
             //serialize
             using (Stream stream = File.Open(serializationFile, FileMode.Create))
             {
@@ -224,7 +164,6 @@ namespace ConsoleSpeech2
                 var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                 States = (LinkedList<State>)bformatter.Deserialize(stream);
-                EmergencyStatesLL = (LinkedList<State>)bformatter.Deserialize(stream);
                 //Console.WriteLine(sizeof(States.First.Value));
             }
 
