@@ -1,0 +1,16 @@
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

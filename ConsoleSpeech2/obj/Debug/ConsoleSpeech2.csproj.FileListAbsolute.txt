@@ -1,0 +1,43 @@
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe.config
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe.manifest
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.application
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.pdb
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\bin\Debug\ClassLibrary1.dll
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\bin\Debug\ClassLibrary1.pdb
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.exe.manifest
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.application
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.exe
+C:\Users\ASUS\Documents\Visual Studio 2013\Projects\ConsoleSpeech2\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.pdb
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.csprojResolveAssemblyReference.cache
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.exe
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.pdb
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.Form1.resources
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.csproj.GenerateResource.Cache
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.csproj.CoreCompileInputs.cache
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe.config
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe.manifest
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.application
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.pdb
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ClassLibrary1.dll
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\Microsoft.Speech.dll
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ClassLibrary1.pdb
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.exe.manifest
+C:\Users\TEMP.DESKTOP-FK2GDRO.001\Downloads\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.application
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe.config
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe.manifest
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.application
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.exe
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ConsoleSpeech2.pdb
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ClassLibrary1.dll
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\bin\Debug\ClassLibrary1.pdb
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.csprojResolveAssemblyReference.cache
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.Form1.resources
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.csproj.GenerateResource.Cache
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.csproj.CoreCompileInputs.cache
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.exe.manifest
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.application
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.exe
+D:\PESU-AerX-ATC_Sim-Dummy-Pushback\ConsoleSpeech2\obj\Debug\ConsoleSpeech2.pdb
