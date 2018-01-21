@@ -17,7 +17,7 @@ namespace ConsoleSpeech2
             static SpeechSynthesizer ss = new SpeechSynthesizer();
             static SpeechRecognitionEngine sre;
             static LinkedList<State> States = new LinkedList<State>();
-            static LinkedList<State> Temp = States;
+            static LinkedList<State> Temp = new LinkedList<State>();
             static LinkedList<State> EmergencyStatesLL = new LinkedList<State>();
             
         
@@ -143,7 +143,7 @@ namespace ConsoleSpeech2
             //stateReplies adds the callsign.
             //no capitalization, no full stops.
             String callSign = "indigo four five six";
-
+            Temp = States;
             //delivery
             String[] stateReplies = new String[]{"validate readback",
                                                  "this is Bangalore Delivery. Start up approved. Cleared for IFR to Delhi as filed. Depart runway niner. Squawk seven one three two. Monitor ATIS zulu.",
@@ -259,6 +259,7 @@ namespace ConsoleSpeech2
                 var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                 States = (LinkedList<State>)bformatter.Deserialize(stream);
+                Temp = States;
                 //Console.WriteLine(sizeof(States.First.Value));
             }
 
