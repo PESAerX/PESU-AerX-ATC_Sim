@@ -34,6 +34,7 @@ namespace StatesAndGrammars
             Choices answer = new Choices();
             foreach (String[] i in state.readbackInfo)
             {
+                if(i.Length == 0) { continue; }
                 answer.Add(i);
             }
             GrammarBuilder gb_readback = new GrammarBuilder();
